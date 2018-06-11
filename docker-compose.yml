@@ -4,18 +4,6 @@ services:
         image: busybox
         volumes:
             - ./mysql/data:/var/lib/mysql
-    wordpress:
-        image: wordpress:latest
-        ports:
-            - "8080:80"
-        depends_on:
-            - container_mysql
-        environment:
-            WORDPRESS_DB_HOST: "container_mysql:3306"
-        env_file: .env
-        volumes:
-            - ./wp-content:/var/www/html/wp-content
-            - ./wp-config.php:/var/www/html/wp-config.php
     mysql:
         image: mysql:5.6
         container_name: "container_mysql"
@@ -24,3 +12,15 @@ services:
             - '3306:3306'
         volumes_from:
             - data
+    wordpress:
+        image: wordpress:latest
+        container_name: "container_wordpress"
+        ports:
+            - "8080:80"
+        links:
+            - mysql:container_mysql
+        environment:
+            WORDPRESS_DB_HOST: "container_mysql:3306"
+        env_file: .env
+        volumes:
+            - ./wp-content:/var/www/html/wp-content
