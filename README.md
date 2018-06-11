@@ -1,4 +1,4 @@
-# Docker For WordPress
+# Docker for WordPress
 
 ## 概要
 WordPress開発用コンテナ
