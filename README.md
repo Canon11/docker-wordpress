@@ -4,7 +4,7 @@
 WordPress開発用コンテナ
 wp-contentディレクトリとmysqlデータ保存用ディレクトリをゲストOSと共有
 
-## run
+## Run
 
 ```$ docker-compose up -d```
 
@@ -35,7 +35,7 @@ $ docker-compose stop
 $ docker-compose start
 ```
 
-## drop containers
+### drop containers
 ```
 $ docker-compose down
 ```
