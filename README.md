@@ -1,10 +1,11 @@
 # Docker for WordPress
 
-## 概要
-WordPress開発用コンテナ
-wp-contentディレクトリとmysqlデータ保存用ディレクトリをゲストOSと共有
+## Description
+WordPress開発用コンテナ  
+wp-contentディレクトリとmysqlデータ保存用ディレクトリがゲストOSのワーキングスペースと共有される
 
-## Run
+## Usage
+### Run
 
 ```$ docker-compose up -d```
 
@@ -12,30 +13,33 @@ wp-contentディレクトリとmysqlデータ保存用ディレクトリをゲ�
 
 [http://localhost:8080](http://localhost:8080)
 
-## Login container
-### mysql
+### Login container
+#### mysql
 ```
 $ docker exec -it container_mysql bash
 $ mysql -u wp_user -p
 ```
 
-### wordpress server
+#### wordpress server
 ```
 $ docker exec -it container_wordpress bash
 ```
 
-## Command
-### stop containers
-```
-$ docker-compose stop
-```
-
-### start containers
+### Command
+#### start containers
 ```
 $ docker-compose start
 ```
 
-### drop containers
+#### stop containers
+```
+$ docker-compose stop
+```
+
+#### drop containers
 ```
 $ docker-compose down
 ```
+
+## Author
+[@Canon11](https://github.com/Canon11/)
