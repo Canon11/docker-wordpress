@@ -6,8 +6,9 @@ wp-contentディレクトリとmysqlデータ保存用ディレクトリがゲ�
 
 ## Usage
 ### Run
-
-```$ docker-compose up -d```
+```
+$ docker-compose up -d
+```
 
 ### check
 
